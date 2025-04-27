@@ -12,17 +12,25 @@
   },
   "dependencies": {
     "@repo/ui": "*",
+    "@tailwindcss/postcss": "^4.1.4",
+    "jsonwebtoken": "^9.0.2",
     "next": "^15.3.0",
+    "next-auth": "^4.24.11",
+    "postcss": "^8.5.3",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.14.0",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "eslint": "^9.25.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "typescript": "5.8.2"
   }
 }
