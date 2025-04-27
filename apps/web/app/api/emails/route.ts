@@ -8,8 +8,8 @@ import { authOptions } from "../../../lib/auth";
 export async function GET() {
   const session = await getServerSession(authOptions);
   const accessToken = session?.accessToken;
-    const checkToken =
-      "yiur token";
+    // const checkToken =
+    //   "yiur token";
 //   if(!accessToken){
 //     return NextResponse.json("Invalid token")
 //   }
@@ -18,7 +18,7 @@ export async function GET() {
     "https://gmail.googleapis.com/gmail/v1/users/me/messages/19672e3edc8c968a",
     {
       headers: {
-        Authorization: `Bearer ${checkToken}`,
+        Authorization: `Bearer ${session?.accessToken}`,
       },
     },
   );
