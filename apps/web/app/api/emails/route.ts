@@ -23,7 +23,6 @@ export async function GET() {
     .replace(/_/g, "/")
     .replace(/\r?\n|\r/g, "");
 
-  // Step 2: Decode from base64
   const decodedBody = Buffer.from(base64, "base64").toString("utf-8");
 
 
