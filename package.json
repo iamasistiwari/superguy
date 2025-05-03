@@ -2,6 +2,7 @@
   "name": "supercha",
   "private": true,
   "scripts": {
+    "prettier": "bunx prettier --write .",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
