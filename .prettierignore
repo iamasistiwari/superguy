@@ -1,0 +1,46 @@
+# python
+
+
+
+# Ignore artifacts:
+**/build
+**/dist
+**/.next
+out
+coverage
+.husky
+**/.turbo
+.github
+apps/python
+
+
+# Node modules
+**/node_modules
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS generated files
+.DS_Store
+
+# Lock files (optional, not usually needed)
+**/pnpm-lock.yaml
+**/package-lock.json
+yarn.lock
+
+# Public/static assets
+public
+static
+
+# Ignore generated Prisma files (if using Prisma)
+packages/db/prisma/migrations
+packages/db/generated
+# Ignore compiled CSS files (if any)
+*.css
+*.min.css
+
+# Ignore all Markdown and JSON files (optional)
+*.md
+*.json

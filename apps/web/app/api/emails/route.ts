@@ -1,9 +1,7 @@
-"use server"
+"use server";
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../../lib/auth";
-
-
 
 export async function GET() {
   const session = await getServerSession(authOptions);
@@ -24,7 +22,6 @@ export async function GET() {
     .replace(/\r?\n|\r/g, "");
 
   const decodedBody = Buffer.from(base64, "base64").toString("utf-8");
-
 
   return NextResponse.json(decodedBody);
 }

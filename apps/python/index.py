@@ -1,20 +1,27 @@
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer, TrainingArguments
+from transformers import (
+    AutoTokenizer,
+    AutoModelForSequenceClassification,
+    Trainer,
+    TrainingArguments,
+)
 from datasets import load_dataset
 from sklearn.preprocessing import LabelEncoder
 import torch
 
-dataset = load_dataset('csv', data_files='emails.csv')
+dataset = load_dataset("csv", data_files="emails.csv")
 
 model_name = "distilbert-base-uncased"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=5)
 
 label_encoder = LabelEncoder()
-label_encoder.fit(dataset['train']['label'])
+label_encoder.fit(dataset["train"]["label"])
+
 
 def preprocess(data):
-    data['label'] = label_encoder.transform(data['label'])  # encode the labels
-    return tokenizer(data['email_text'], truncation=True, padding='max_length')
+    data["label"] = label_encoder.transform(data["label"])  # encode the labels
+    return tokenizer(data["email_text"], truncation=True, padding="max_length")
+
 
 tokenized = dataset.map(preprocess, batched=True)
 
@@ -30,7 +37,7 @@ training_args = TrainingArguments(
 trainer = Trainer(
     model=model,
     args=training_args,
-    train_dataset=tokenized['train'],
+    train_dataset=tokenized["train"],
 )
 
 # Start training

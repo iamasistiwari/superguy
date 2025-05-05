@@ -4,7 +4,6 @@ import { JWT } from "next-auth/jwt";
 import jwt from "jsonwebtoken";
 import GoogleProvider from "next-auth/providers/google";
 
-
 async function refreshAccessToken(token: JWT) {
   try {
     const url = "https://oauth2.googleapis.com/token";
@@ -42,7 +41,6 @@ async function refreshAccessToken(token: JWT) {
     };
   }
 }
-
 
 export const authOptions: NextAuthOptions = {
   session: {
@@ -132,7 +130,7 @@ export const authOptions: NextAuthOptions = {
         }
         return true;
       } catch (e) {
-        console.log(e)
+        console.log(e);
         return false;
       }
     },
